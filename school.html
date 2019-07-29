@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    * {
+  box-sizing: border-box;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.content {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 50px;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 10px;
+  background-color: white;
+  max-height: 0;
+  max-width: 89.7%;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+#content.navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+}
+#myBtn {
+  width: 190px;
+  font-size: 18px;
+  padding: 5px;
+  border: goldenrod;
+  background: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: red;
+  color: whitesmoke;
+}
+ @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.all{
+    display: flex;
+    perspective: 10px;
+    transform: perspective(300px) rotateX(20deg);
+    will-change:perspective;
+    perspective-origin: center center;
+    transition: all 1.3s ease-out;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+.all:hover{
+    perspective: 1000px;
+    transition: all 1.3s ease-in;
+    transform: perspective(10000px) rotateX(0deg);
+}
+.all:hover .text{
+    opacity: 1;
+}
+.all:hover > div{
+    opacity: 1;
+    transition-delay: 0s;
+}
+.all:hover .explainer{
+    opacity: 0;
+}
+.left , .center, .right, .lefter, .righter{
+    width: 200px;
+    height: 150px;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    border:1px solid #fff;
+    box-shadow: 0 0 20px 5px rgba(100,100,255,.4);
+    opacity: 0;
+    transition: all .3s ease;
+    transition-delay: 1s;
+    position: relative;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #58d;
+    cursor: pointer;
+    background-blend-mode: color-burn;
+}
+.left:hover, .center:hover, .right:hover, .lefter:hover, .righter:hover{
+    box-shadow: 0 0 30px 10px rgba(100,100,255,0.6);
+    background-color:#ccf;
+}
+.text{
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all .3s ease;
+    bottom: 0;
+    left: 5px;
+    position: absolute;
+    will-change: transform;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(100,100,255,.6);
+}
+.lefter{
+    transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
+    background-image: url(https://cdn4.iconfinder.com/data/icons/education-school-1/64/letter-512.png);
+}
+.left{
+    transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
+    background-image: url(https://cdn1.iconfinder.com/data/icons/journalist-4/64/report-message-news-broadcast-live-256.png);
+}
+.center{
+    opacity: 1;
+    background-image: url(https://t1.ftcdn.net/jpg/02/16/05/38/400_F_216053859_FXvlLVHb73xoK4N09JE7oQjxLBDqQG0V.jpg);
+}
+.right{
+    transform: translateX(30px) translateZ(-25px) rotateY(5deg);
+    background-image: url(https://cdn1.iconfinder.com/data/icons/journalist-4/64/notes-taking-writing-record-stationery-256.png);
+}
+.righter{
+    transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+    background-image: url(https://cdn4.iconfinder.com/data/icons/success-filloutline/64/trophy-cup-champion-award-winner-256.png);
+}
+.explainer{
+    font-weight: 300;
+    font-size: 2rem;
+    color: #fff;
+    transition: all .6s ease;
+    width: 100%;
+    height: 100%;
+    background-color: #303050;
+    background-image: radial-gradient(circle at center top, #cce, #33a);
+    border-radius: 10px;
+    text-shadow:  0 0 10px rgba(255,255,255,.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+</head>
+<body>
+    
+<video autoplay muted loop id="myVideo">
+  <source src="d21.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+    
+<h1><font color="white red">SCHOOL</h1>
+<marquee>
+    <font color="gold">"You can find the best schools in Pondicherry!!!"
+    </marquee>
+<div class="all">
+
+        <div class="lefter">
+            <div class="text"><button id="myBtn" onclick="window.location = 'college.html'">COLLEGE</button></div>
+        </div>
+
+        <div class="left">
+            <div class="text"><button id="myBtn" onclick="window.location = 'consul.html'">CONSULT</button></div>
+        </div>
+        <div class="center">
+            <div class="explainer"><span><button id="myBtn" onclick="window.location = 'index.html'">EDUSTAT</button></span></div>
+        </div>
+        <div class="right">
+            <div class="text">
+            	<button id="myBtn" onclick="window.location = 'govtstaff.html'">REGISTRER</button>
+            </div>
+        </div>
+
+        <div class="righter">
+
+            <div class="text">
+            	<button id="myBtn" onclick="window.location = 'rating.html'">RATING</button>
+            </div>
+        </div>
+    </div>
+
+<br><br><br><br>
+<button class="accordion">PRIVATE SCHOOLS</button>
+
+<div class="panel">
+ <p>
+ <h3><font color="#7B1FA2">Petit Seminaire Higher Secondary School</font></h3>
+ <a href="https://petitseminaire.org.in/">click here to view page</a>
+ <br>
+ <br>
+ <h3><font color="#7B1FA2">St.Patrick Matric Higher Seccondary School</font></h3>
+ <a href="http://www.st-patricksschool.com/">click here to view page</a>
+ <br>
+ <br>
+ <h3><font color="#7B1FA2">St.Joseph Cluny Higher Seccondary School</font></h3>
+ <a href="http://sjclunyhsspondy.org/">click here to view page</a>
+ </p>
+</div>
+<br><br>
+<button class="accordion">GOVRNMENT SCHOOLS</button>
+<div class="panel">
+ <p>
+ <h3><font color="#7B1FA2">Jeevanandam Government Higher Secondary School</font></h3>
+ <a href="http://pondicherryinfo.in/main/locations/jeevanandam-government-higher-secondary-school-mudaliarpet-pondicherry/">click here to view page</a>
+ <br>
+ <br>
+ <h3><font color="#7B1FA2"><font color="#7B1FA2">Subramania Bharathi Gghss-Lal Bahadur Shastri Street(Bussy St.) School</font></h3>
+ <a href="http://www.icbse.com/schools/subramania-bharathi-gghss-lal-bahadur-shastri-street-bussy-st/34020112867">click here to view page</a>
+ <br>
+ <br>
+ <h3><font color="#7B1FA2"><font color="#7B1FA2">Voc Govt Higher Sec School</font></h3>
+ <a href="http://www.icbse.com/schools/voc-govt-higher-sec-school/34040610907">click here to view page</a>
+ </p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>

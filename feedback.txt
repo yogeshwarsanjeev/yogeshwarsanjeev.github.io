@@ -1,0 +1,1 @@
+create table rat(firstname varchar(30),lastname varchar(30),star varchar(10),subject varchar(90));

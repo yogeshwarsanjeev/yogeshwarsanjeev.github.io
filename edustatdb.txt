@@ -1,0 +1,14 @@
+create table edus(
+  firstname varchar(50),
+  lastname varchar(50),
+  gender varchar(20),
+  dob varchar(20),
+  department varchar(50),
+  qualification varchar(50),
+  occupation varchar(30),
+  workingas varchar(30),
+  experience varchar(30),
+  address varchar(60),
+  email varchar(50),
+  contact varchar(20)
+);

@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+​
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+​
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+​
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+​
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+​
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+<style>
+body 
+
+{font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color:black;
+  padding: 20px;
+}
+
+</style>
+<body>
+<video autoplay muted loop id="myVideo">
+  <source src="ratingbg.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+<div class="content">
+   
+<h3>Feedback Form</h3>
+
+  <form action="/action_page.php">
+    <label for="fname"></label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname"></label>
+    <input type="text" id="lname" name="lastname" placeholder="Your email..">
+
+    <label for="Star rating"></label>
+    <select id="Star rating" name="Star rating">
+      <option value="Star Rating">Your rating</option>
+      <option value="5 star">5 star</option>
+      <option value="4 star">4 star</option>
+      <option value="3 star">3 star</option>
+      <option value="2 star">2 star</option>
+      <option value="1 star">1 star</option>
+    </select>
+
+    <label for="subject"></label>
+    <textarea id="subject" name="subject" placeholder="Write your comments.." style="height:80px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
+​
